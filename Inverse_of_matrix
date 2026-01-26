@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    float a[2][2], det;
+
+    printf("Enter elements of 2x2 matrix:\n");
+    for(int i = 0; i < 2; i++)
+        for(int j = 0; j < 2; j++)
+            scanf("%f", &a[i][j]);
+
+    det = a[0][0]*a[1][1] - a[0][1]*a[1][0];
+
+    if(det == 0) {
+        printf("Inverse not possible (Determinant = 0)");
+    } else {
+        printf("Inverse of matrix:\n");
+
+        printf("%.2f  %.2f\n",  a[1][1]/det, -a[0][1]/det);
+        printf("%.2f  %.2f\n", -a[1][0]/det,  a[0][0]/det);
+    }
+
+    return 0;
+}
